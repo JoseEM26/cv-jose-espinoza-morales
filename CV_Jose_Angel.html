@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Jose Angel Espinoza Morales</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 11px;
+    color: #1a1a1a;
+    background: #fff;
+    line-height: 1.45;
+  }
+
+  .page {
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 12mm 14mm 12mm 14mm;
+  }
+
+  /* HEADER */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2.5px solid #1565C0;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+  }
+
+  .header-left h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0D47A1;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .header-left .subtitle {
+    font-size: 11.5px;
+    color: #1565C0;
+    font-weight: 600;
+    margin-top: 3px;
+  }
+
+  .header-right {
+    text-align: right;
+    font-size: 10.5px;
+    color: #444;
+    line-height: 1.7;
+  }
+
+  .header-right a {
+    color: #1565C0;
+    text-decoration: none;
+  }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #0D47A1;
+    border-bottom: 1.5px solid #1565C0;
+    padding-bottom: 2px;
+    margin: 11px 0 7px 0;
+  }
+
+  /* PERFIL */
+  .perfil p {
+    font-size: 10.5px;
+    color: #333;
+    text-align: justify;
+    line-height: 1.55;
+  }
+
+  /* EXPERIENCIA */
+  .job { margin-bottom: 9px; }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .job-title {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+
+  .job-period {
+    font-size: 10px;
+    color: #555;
+    white-space: nowrap;
+    margin-left: 8px;
+  }
+
+  .job-company {
+    font-size: 10px;
+    color: #1565C0;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .job ul {
+    padding-left: 14px;
+    margin-bottom: 4px;
+  }
+
+  .job ul li {
+    font-size: 10.5px;
+    color: #333;
+    margin-bottom: 2px;
+    line-height: 1.45;
+  }
+
+  .tags {
+    margin-top: 3px;
+  }
+
+  .tag {
+    display: inline-block;
+    background: #E3F2FD;
+    color: #0D47A1;
+    border-radius: 3px;
+    padding: 1px 6px;
+    font-size: 9.5px;
+    font-weight: 600;
+    margin: 1px 2px 1px 0;
+  }
+
+  /* PROYECTOS */
+  .project { margin-bottom: 7px; }
+
+  .project-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 2px;
+  }
+
+  .project p {
+    font-size: 10.5px;
+    color: #333;
+    line-height: 1.45;
+    margin-bottom: 2px;
+  }
+
+  .project ul {
+    padding-left: 14px;
+    margin-bottom: 2px;
+  }
+
+  .project ul li {
+    font-size: 10.5px;
+    color: #333;
+    margin-bottom: 1px;
+  }
+
+  /* SKILLS GRID */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 16px;
+  }
+
+  .skill-block { margin-bottom: 2px; }
+
+  .skill-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #0D47A1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+
+  .skill-block p {
+    font-size: 10px;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  /* FORMACIÓN + IDIOMAS — 2 columnas */
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .edu-item {
+    font-size: 10.5px;
+    color: #333;
+  }
+
+  .edu-item strong {
+    color: #1a1a1a;
+    font-size: 11px;
+  }
+
+  .lang-item {
+    font-size: 10.5px;
+    color: #333;
+    margin-bottom: 3px;
+  }
+
+  .lang-item strong {
+    color: #1a1a1a;
+  }
+
+  /* PRINT */
+  @media print {
+    body { background: #fff; }
+    .page { padding: 10mm 12mm; }
+    @page { margin: 0; size: A4; }
+  }
+
+  .divider { border: none; border-top: 1px solid #e0e0e0; margin: 6px 0; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <h1>Jose Angel Espinoza Morales</h1>
+      <div class="subtitle">Azure Cloud Developer &nbsp;|&nbsp; Backend .NET &amp; Java &nbsp;|&nbsp; DevOps Engineer</div>
+    </div>
+    <div class="header-right">
+      📍 Lima, San Juan de Lurigancho – Campoy, Perú<br>
+      📞 (+51) 975 026 835<br>
+      ✉️ joseangelespinozamorales@gmail.com<br>
+      💻 <a href="https://github.com/JoseEM26">github.com/JoseEM26</a>
+    </div>
+  </div>
+
+  <!-- PERFIL -->
+  <div class="section-title">Perfil Profesional</div>
+  <div class="perfil">
+    <p>
+      Desarrollador de software con 2 años de experiencia en desarrollo backend, arquitectura de microservicios y operaciones cloud.
+      He trabajado con Java, .NET, Python y Node.js construyendo APIs REST escalables y soluciones orientadas a eventos.
+      Manejo Docker, CI/CD con GitHub Actions, monitoreo con Prometheus y Grafana, y cuento con conocimientos de los servicios core de Microsoft Azure.
+      Actualmente profundizando en el ecosistema completo de Azure orientado a la certificación AZ-204.
+      Me adapto rápido a nuevos stacks — la transición de Java a C#/.NET es natural dado que comparten los mismos patrones de arquitectura e inyección de dependencias.
+    </p>
+  </div>
+
+  <!-- EXPERIENCIA -->
+  <div class="section-title">Experiencia Laboral</div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">Analista Programador Java Junior</span>
+      <span class="job-period">Enero 2026 – Abril 2026</span>
+    </div>
+    <div class="job-company">Comfutura &nbsp;|&nbsp; Lima, Perú</div>
+    <ul>
+      <li>Desarrollé e integré APIs REST con Java 21 y Spring Boot implementando múltiples módulos de negocio dentro de una arquitectura de microservicios.</li>
+      <li>Configuré y mantuve pipelines CI/CD con GitHub Actions para automatizar el ciclo completo: build, pruebas, generación de imagen Docker y despliegue en infraestructura cloud.</li>
+      <li>Participé en el diseño de un plan de migración del monolito hacia microservicios aplicando arquitectura hexagonal (Ports &amp; Adapters) y el patrón Strangler Fig.</li>
+      <li>Implementé monitoreo de aplicaciones con Spring Boot Actuator, Prometheus y Grafana para observabilidad en producción.</li>
+      <li>Gestioné esquemas de bases de datos relacionales con PostgreSQL para múltiples dominios del negocio.</li>
+      <li>Colaboré en sprints con metodología Scrum, participando en code reviews, dailies y retrospectivas.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Java 21</span><span class="tag">Spring Boot</span><span class="tag">PostgreSQL</span>
+      <span class="tag">Docker</span><span class="tag">GitHub Actions</span><span class="tag">CI/CD</span>
+      <span class="tag">Spring Data JPA</span><span class="tag">Angular 20</span><span class="tag">Git</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">DevOps &amp; Cloud Engineer — Freelance</span>
+      <span class="job-period">2026</span>
+    </div>
+    <div class="job-company">Proyecto: Hosting Empresarial Pirkha</div>
+    <ul>
+      <li>Implementé y administré infraestructura cloud completa para hosting web, dominios corporativos y aplicaciones empresariales.</li>
+      <li>Configuré servidores Linux con Docker y automaticé la gestión de servicios con pipelines de despliegue continuo.</li>
+      <li>Implementé seguridad perimetral (CrowdSec), monitoreo continuo y respaldos automatizados garantizando alta disponibilidad.</li>
+      <li>Gestioné certificados SSL, DNS y configuración de Nginx como reverse proxy.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Hetzner Cloud</span><span class="tag">Linux</span><span class="tag">Docker</span>
+      <span class="tag">Nginx</span><span class="tag">GitHub Actions</span><span class="tag">CrowdSec</span><span class="tag">SSH</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">Full Stack Developer &amp; DevOps — Freelance</span>
+      <span class="job-period">2026</span>
+    </div>
+    <div class="job-company">Proyecto: Soluciones Satelitales</div>
+    <ul>
+      <li>Diseñé e implementé arquitectura moderna basada en monorepos (TurboRepo) con NestJS y Next.js para automatización comercial.</li>
+      <li>Desarrollé servicios backend con comunicación asíncrona e integraciones con APIs externas (Meta Graph API, WhatsApp).</li>
+      <li>Implementé arquitectura orientada a eventos para clasificación y derivación de prospectos con comunicación asíncrona entre servicios.</li>
+      <li>Desplegué en VPS con Docker y pipelines automatizados con GitHub Actions.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">NestJS</span><span class="tag">Next.js</span><span class="tag">TypeScript</span>
+      <span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">Full Stack Developer .NET — Freelance</span>
+      <span class="job-period">Agosto 2025 – Noviembre 2025</span>
+    </div>
+    <div class="job-company">Digital Solution 360</div>
+    <ul>
+      <li>Desarrollé y mantuve la plataforma empresarial PlusATS con ASP.NET Core, implementando nuevas funcionalidades y mejoras de rendimiento sobre base de código en producción activa.</li>
+      <li>Integré soluciones de Inteligencia Artificial aplicada al negocio, automatizando reglas de validación y procesamiento de datos.</li>
+      <li>Implementé integraciones SOAP y REST para interoperabilidad con sistemas externos, aplicando transformaciones de contrato y manejo robusto de errores.</li>
+      <li>Diseñé y optimicé consultas sobre SQL Server y MySQL mejorando tiempos de respuesta en operaciones críticas.</li>
+      <li>Gestioné envío automatizado de notificaciones por correo mediante SMTP integrado en flujos de negocio.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">C#</span><span class="tag">ASP.NET Core</span><span class="tag">SQL Server</span>
+      <span class="tag">MySQL</span><span class="tag">SOAP</span><span class="tag">REST API</span><span class="tag">SMTP</span><span class="tag">Git</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-title">Full Stack Developer Java</span>
+      <span class="job-period">Mayo 2025 – Agosto 2025</span>
+    </div>
+    <div class="job-company">Mobilenet &nbsp;|&nbsp; Lima, Perú</div>
+    <ul>
+      <li>Desarrollé módulos administrativos completos reemplazando procesos manuales con aplicaciones web desplegadas en la nube.</li>
+      <li>Implementé validaciones de lógica de negocio, gestión de roles y control de versiones con Git.</li>
+      <li>Desplegué aplicaciones en Railway con gestión automatizada de entornos.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Angular 20</span>
+      <span class="tag">TypeScript</span><span class="tag">MySQL</span><span class="tag">Railway</span><span class="tag">REST API</span>
+    </div>
+  </div>
+
+  <!-- PROYECTOS -->
+  <div class="section-title">Proyectos Destacados</div>
+
+  <div class="project">
+    <div class="project-title">Migración Monolito → Microservicios (Comfutura)</div>
+    <ul>
+      <li>Arquitectura Hexagonal (Ports &amp; Adapters) + Strangler Fig Pattern para migración sin interrumpir operaciones.</li>
+      <li>Config Server + Eureka para service discovery — comunicación asíncrona Event-Driven entre módulos.</li>
+      <li>CI/CD por microservicio con GitHub Actions — observabilidad con Prometheus y Grafana.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Java</span><span class="tag">Spring Cloud</span><span class="tag">Docker</span><span class="tag">Kafka</span><span class="tag">PostgreSQL</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="project">
+    <div class="project-title">Plataforma SaaS — Gestión de Restaurantes</div>
+    <p>Sistema SaaS multiempresa con gestión de usuarios, roles, pedidos y reportes. Desplegado con Docker + CI/CD automatizado.</p>
+    <div class="tags">
+      <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Angular</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="project">
+    <div class="project-title">Plataforma SaaS — Gestión de Canchas Deportivas</div>
+    <p>Sistema multitenant para reservas, control de pagos y horarios dinámicos con prevención de colisiones.</p>
+    <div class="tags">
+      <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">JWT</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="project">
+    <div class="project-title">Arquitectura BFF + Integración SOAP/REST</div>
+    <p>Implementación del patrón Backend For Frontend con capa de transformación XML→JSON para interoperabilidad entre sistemas legados SOAP y servicios REST modernos.</p>
+    <div class="tags">
+      <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">SOAP</span><span class="tag">REST API</span>
+    </div>
+  </div>
+
+  <!-- CONOCIMIENTOS -->
+  <div class="section-title">Conocimientos Técnicos</div>
+  <div class="skills-grid">
+
+    <div class="skill-block">
+      <div class="skill-label">Microsoft Azure</div>
+      <p>App Service, Azure Functions, Service Bus, Event Grid, API Management, Key Vault, Azure SQL Database, Storage Accounts, Azure Container Registry, Azure DevOps, Application Insights, Azure Monitor, Managed Identity, Azure AD / OAuth 2.0</p>
+    </div>
+
+    <div class="skill-block">
+      <div class="skill-label">Cloud &amp; DevOps</div>
+      <p>Docker, Docker Compose, Kubernetes básico (K8s/AKS), CI/CD, GitHub Actions, Azure DevOps Pipelines, Linux, SSH, Nginx, Hetzner Cloud, VPS Administration</p>
+    </div>
+
+    <div class="skill-block">
+      <div class="skill-label">Backend</div>
+      <p>Java 21, Spring Boot, Spring Security, Spring Cloud (Eureka, Config Server, Gateway), C# / ASP.NET Core, NestJS, Python, REST API, SOAP, JWT, OAuth 2.0</p>
+    </div>
+
+    <div class="skill-block">
+      <div class="skill-label">Bases de Datos</div>
+      <p>PostgreSQL, MySQL, MariaDB, SQL Server, Cosmos DB (conceptual) — consultas optimizadas, diseño de esquemas relacionales</p>
+    </div>
+
+    <div class="skill-block">
+      <div class="skill-label">Arquitectura de Software</div>
+      <p>Microservicios, Arquitectura Hexagonal, Clean Architecture, DDD, API Gateway, BFF, Event-Driven Architecture, MVC, Strangler Fig Pattern</p>
+    </div>
+
+    <div class="skill-block">
+      <div class="skill-label">Observabilidad &amp; Monitoreo</div>
+      <p>Prometheus, Grafana, Spring Boot Actuator, Application Insights, centralised logging</p>
+    </div>
+
+    <div class="skill-block">
+      <div class="skill-label">Herramientas</div>
+      <p>VS Code, IntelliJ IDEA, Postman, Swagger / OpenAPI, Git, Maven, Docker Desktop, Portainer, Coolify</p>
+    </div>
+
+    <div class="skill-block">
+      <div class="skill-label">Metodologías</div>
+      <p>Scrum, Kanban — sprints, dailies, planning, retrospectiva, code reviews</p>
+    </div>
+
+  </div>
+
+  <!-- FORMACIÓN + IDIOMAS -->
+  <div class="section-title">Formación &amp; Idiomas</div>
+  <div class="bottom-grid">
+    <div>
+      <div class="edu-item">
+        <strong>Técnico en Computación e Informática</strong><br>
+        CIBERTEC &nbsp;|&nbsp; 2026
+      </div>
+      <div class="edu-item" style="margin-top:5px;">
+        <strong>Inglés — Programa de Idiomas</strong><br>
+        ICPNA &nbsp;|&nbsp; 2025
+      </div>
+      <div class="edu-item" style="margin-top:5px;">
+        <strong>Inglés Conversacional</strong><br>
+        WeTalk &nbsp;|&nbsp; 2026
+      </div>
+    </div>
+    <div>
+      <div class="lang-item"><strong>Español:</strong> Nativo</div>
+      <div class="lang-item"><strong>Inglés:</strong> Intermedio técnico</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
