@@ -140,6 +140,9 @@ export const TECH_INFO: Record<string, string> = {
   Quarkus: "Framework de Java (alternativa a Spring) optimizado para arranque rápido y bajo consumo, pensado para contenedores y serverless.",
   Go: "Lenguaje de programación de Google, compilado y muy eficiente, popular para servicios backend y herramientas de infraestructura.",
   Vue: "Framework de JavaScript para construir interfaces de usuario, con una curva de aprendizaje suave frente a React o Angular.",
+  Swift: "Lenguaje de programación de Apple para construir aplicaciones nativas de iOS, macOS y el resto de su ecosistema.",
+  Hibernate: "Framework de mapeo objeto-relacional (ORM) para Java, usado por Spring Data JPA para hablar con la base de datos.",
+  Bootstrap: "Framework de CSS con componentes y grillas listas para usar, para construir interfaces responsivas rápidamente.",
 };
 
 export function getTechInfo(name: string): string | undefined {

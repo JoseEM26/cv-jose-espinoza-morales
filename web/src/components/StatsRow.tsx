@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react";
-import { animate, useInView, useMotionValue, useTransform } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { animate, useInView } from "framer-motion";
 import { caseStudies } from "../data/caseStudies";
 import { experience, featuredTech } from "../data/cv";
 import Reveal from "./Reveal";
@@ -14,18 +14,22 @@ const STATS = [
 function Counter({ value, suffix }: { value: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (v) => `${Math.round(v)}${suffix}`);
+  const [display, setDisplay] = useState(0);
 
   useEffect(() => {
     if (!inView) return;
-    const controls = animate(count, value, { duration: 1.3, ease: [0.22, 1, 0.36, 1] });
+    const controls = animate(0, value, {
+      duration: 1.3,
+      ease: [0.22, 1, 0.36, 1],
+      onUpdate: (v) => setDisplay(Math.round(v)),
+    });
     return controls.stop;
-  }, [inView, value, count]);
+  }, [inView, value]);
 
   return (
     <span ref={ref} className="font-display text-3xl font-extrabold text-slate-900 sm:text-4xl dark:text-white">
-      {rounded}
+      {display}
+      {suffix}
     </span>
   );
 }

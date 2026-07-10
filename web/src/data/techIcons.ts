@@ -55,6 +55,9 @@ import {
   SiQuarkus,
   SiGo,
   SiVuedotjs,
+  SiSwift,
+  SiHibernate,
+  SiBootstrap,
 } from "react-icons/si";
 import { TbBluetooth, TbBrandAzure, TbBrandVscode, TbDatabase, TbServer2, TbShieldLock } from "react-icons/tb";
 
@@ -133,6 +136,9 @@ export const TECH_ICONS: Record<string, TechIcon> = {
   Quarkus: { icon: SiQuarkus, color: "#4695EB" },
   Go: { icon: SiGo, color: "#00ADD8" },
   Vue: { icon: SiVuedotjs, color: "#4FC08D" },
+  Swift: { icon: SiSwift, color: "#F05138" },
+  Hibernate: { icon: SiHibernate, color: "#59666C" },
+  Bootstrap: { icon: SiBootstrap, color: "#7952B3" },
   Railway: { icon: SiRailway, color: "#0B0D0E" },
   "IntelliJ IDEA": { icon: SiIntellijidea, color: "#000000" },
   "VS Code": { icon: TbBrandVscode, color: "#007ACC" },

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { LuFolderGit2 } from "react-icons/lu";
+import { LuFolderGit2, LuGithub } from "react-icons/lu";
 import type { Project } from "../data/cv";
 import TechBadge from "./TechBadge";
 import Reveal from "./Reveal";
@@ -67,6 +67,17 @@ export default function ProjectCard({ project, index }: { project: Project; inde
               <TechBadge key={tag} name={tag} index={ti} />
             ))}
           </div>
+
+          {project.repoUrl && (
+            <a
+              href={project.repoUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-600 hover:underline dark:text-accent-400"
+            >
+              <LuGithub size={15} /> Ver repositorio
+            </a>
+          )}
         </div>
       </motion.div>
     </Reveal>

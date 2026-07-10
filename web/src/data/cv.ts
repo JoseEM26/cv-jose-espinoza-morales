@@ -126,9 +126,48 @@ export interface Project {
   description?: string;
   points?: string[];
   tags: string[];
+  repoUrl?: string;
 }
 
 export const projects: Project[] = [
+  {
+    title: "GeoCheck AI — Sistema de Asistencia Híbrida (Web + iOS)",
+    description:
+      "Plataforma de control de asistencia laboral para modalidades presencial, remota, híbrida y de campo, con geofencing y marcación por QR o GPS.",
+    points: [
+      "Backend Spring Boot con arquitectura RESTful y control de acceso por roles (Admin, Jefe de Terreno, Trabajador de Terreno, Trabajador).",
+      "App móvil nativa en Swift con escaneo de QR de tokens rotativos, marcación por GPS y mapa interactivo para definir puntos de control.",
+      "Panel web en Angular con autenticación de dos factores (2FA) y geofencing configurable por oficina.",
+    ],
+    tags: ["Java", "Spring Boot", "Angular", "Swift", "MySQL"],
+    repoUrl: "https://github.com/JoseEM26/mobil-ios-asynchronous",
+  },
+  {
+    title: "SaaS Multi-Tienda — Store Collection",
+    description:
+      "SaaS que permite crear múltiples tiendas online independientes, cada una con su propio catálogo, precios e información, sobre un mismo backend compartido.",
+    tags: ["Java", "Spring Boot", "Angular", "Swagger / OpenAPI"],
+    repoUrl: "https://github.com/JoseEM26/saas-store-collection",
+  },
+  {
+    title: "App Android tipo Blackboard para Instituto",
+    description:
+      "Aplicación móvil Android para gestión académica al estilo Blackboard, con backend en Spring Boot y panel web en Angular.",
+    tags: ["Java", "Spring Boot", "Angular", "Android"],
+    repoUrl: "https://github.com/JoseEM26/mobil-android-ciberproto",
+  },
+  {
+    title: "Migración de Spring Boot a Quarkus con Arquitectura Hexagonal",
+    description:
+      "API REST en Quarkus 3 bajo arquitectura hexagonal (Ports & Adapters), con autenticación JWT RSA, control de acceso por roles y frontend en Angular Material.",
+    points: [
+      "Apliqué el patrón de Casos de Uso sobre arquitectura hexagonal, separando dominio, aplicación e infraestructura.",
+      "Implementé autenticación JWT con claves RSA (MicroProfile JWT) y control de acceso por roles entre USER y ADMIN.",
+      "Documenté la API completa con Swagger/OpenAPI y desplegué todo el stack (API, frontend, PostgreSQL) con Docker Compose.",
+    ],
+    tags: ["Quarkus", "Java 21", "JWT", "PostgreSQL", "Angular", "Docker"],
+    repoUrl: "https://github.com/JoseEM26/web-quarkus-admin",
+  },
   {
     title: "Plataforma SaaS — Gestión de Restaurantes",
     description:

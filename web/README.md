@@ -1,32 +1,53 @@
-# React + TypeScript + Vite
+# CV Web — Jose Angel Espinoza Morales
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Sitio personal / CV interactivo, construido con React, TypeScript, Vite, Tailwind CSS y Framer Motion. Presenta la experiencia, proyectos y stack técnico como una web animada, con casos de estudio detallados por cada trabajo y una versión imprimible del CV que se genera a partir de los mismos datos.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19 + TypeScript + Vite** — base de la aplicación
+- **Tailwind CSS v4** — estilos y theming (claro/oscuro)
+- **Framer Motion** — animaciones (scroll reveals, transiciones de página, tilt de tarjetas, contadores)
+- **React Router** — navegación entre el sitio, los casos de estudio (`/case/:slug`) y el CV imprimible (`/cv`)
+- **react-icons** — íconos de tecnologías (Simple Icons, Tabler, Lucide)
 
-## React Compiler
+## Estructura
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```
+src/
+  data/           # Fuente única de verdad: perfil, experiencia, proyectos, skills, casos de estudio
+    cv.ts
+    caseStudies.ts
+    techIcons.ts    # íconos por tecnología
+    techInfo.ts     # descripciones para el modal de "qué es esto"
+  components/     # Piezas de UI reutilizables (Nav, Hero, Experience, Projects, Skills, etc.)
+  pages/          # Home, CaseStudyPage (detalle por caso), PrintableCV (versión imprimible del CV)
+  context/        # TechInfoContext — modal global de tecnologías clickeables
+  hooks/          # useTheme (modo claro/oscuro)
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+**Todo el contenido vive en `src/data/`.** Para agregar un nuevo empleo, proyecto o caso de estudio no se toca ningún componente — solo se edita `cv.ts` (y `caseStudies.ts` si tiene página de detalle). La página `/cv` y el resto del sitio leen de ahí, así que siempre quedan sincronizados.
+
+## Desarrollo
+
+```bash
+npm install
+npm run dev       # servidor de desarrollo (http://localhost:5173 por defecto)
+npm run build     # typecheck + build de producción a dist/
+npm run preview   # sirve el build de producción localmente
+npm run lint      # oxlint
+```
+
+## Rutas
+
+- `/` — sitio principal (hero, experiencia, proyectos, skills, formación, contacto)
+- `/case/:slug` — caso de estudio detallado de un trabajo/proyecto puntual
+- `/cv` — versión imprimible del CV (botón "Imprimir / Guardar como PDF"), generada desde los mismos datos del sitio
+
+## Despliegue
+
+Pensado para desplegarse en **Vercel** o **Netlify** sin configuración adicional:
+
+- `vercel.json` — rewrite de todas las rutas a `index.html` (necesario por ser una SPA con React Router)
+- `public/_redirects` — el equivalente para Netlify
+
+Si se despliega en otro hosting, hay que replicar esa regla de rewrite (toda ruta → `index.html`) para que `/case/:slug` y `/cv` funcionen al entrar directamente por URL.
